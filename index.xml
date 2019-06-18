@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Home on My New Hugo Site</title>
+    <link>https://kingchang.github.io/</link>
+    <description>Recent content in Home on My New Hugo Site</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-tw</language>
+    <lastBuildDate>Wed, 12 Jun 2019 08:43:58 +0800</lastBuildDate>
+    
+	<atom:link href="https://kingchang.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Hugo 安裝撞牆經驗</title>
+      <link>https://kingchang.github.io/posts/hugo-install/</link>
+      <pubDate>Mon, 17 Jun 2019 09:06:44 +0800</pubDate>
+      
+      <guid>https://kingchang.github.io/posts/hugo-install/</guid>
+      <description>Install Ubuntu 18.04 Install Dependency Software  cd /opt/ mkdir golang cd golang wget --no-check-certificate https://studygolang.com/dl/golang/go1.12.5.linux-amd64.tar.gz tar -zxvf go1.12.5.linux-amd64.tar.gz -C /usr/lib apt install git python3-pip wget software-properties-common apt-transport-https pip3 install Pygments export VER=&amp;#34;0.55.6&amp;#34; wget https://github.com/gohugoio/hugo/releases/download/v${VER}/hugo_${VER}_Linux-64bit.deb dpkg -i hugo_${VER}_Linux-64bit.deb apt update apt list --upgradable apt upgrade wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add - add-apt-repository &amp;#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&amp;#34; apt update apt install code  Edit ~/.profile on latest line append  export PATH=$PATH:/usr/lib/go/bin  Create blog directory  hugo new site devops_blog -f yaml cd devops_blog git init git remote add origin git@github.</description>
+    </item>
+    
+  </channel>
+</rss>

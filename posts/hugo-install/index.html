@@ -1,0 +1,253 @@
+<!doctype html>
+
+<html lang="en" class="h-100">
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="generator" content="Hugo 0.55.6" />
+  <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
+
+  
+  
+  <title>Hugo 安裝撞牆經驗 | My New Hugo Site</title>
+  <style>
+.container {
+  max-width: 700px;
+}
+#nav a {
+  font-weight: bold;
+  color: inherit;
+}
+#nav a.nav-link-active {
+  background-color: #212529;
+  color: #fff;
+}
+#nav-border {
+  border-bottom: 1px solid #212529;
+}
+#main {
+  margin-top: 1em;
+  margin-bottom: 4em;
+}
+#home-jumbotron {
+  background-color: inherit;
+}
+#footer .container {
+  padding: 1em 0;
+}
+#footer a {
+  color: inherit;
+  text-decoration: underline;
+}
+.font-125 {
+  font-size: 125%;
+}
+.tag-btn {
+  margin-bottom: 0.3em;
+}
+pre {
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 16px;
+}
+pre code {
+  padding: 0;
+  font-size: inherit;
+  color: inherit; 
+  background-color: transparent;
+  border-radius: 0;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+img,
+iframe,
+embed,
+video,
+audio {
+  max-width: 100%;
+}
+</style>
+</head>
+
+  <body class="d-flex flex-column h-100">
+    <div id="nav-border" class="container">
+  <nav id="nav" class="nav justify-content-center">
+  
+  
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/"><i data-feather="home"></i> Home</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/posts/"><i data-feather="edit"></i> Blog</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/tags/"><i data-feather="tag"></i> Tags</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/about/"><i data-feather="smile"></i> About</a>
+  
+    
+    
+      
+      
+      
+      
+        
+      
+    
+    
+    <a class="nav-link " href="/index.xml"><i data-feather="rss"></i> RSS</a>
+  
+  </nav>
+</div>
+    <div class="container">
+      <main id="main">
+        
+
+<h1>Hugo 安裝撞牆經驗</h1>
+<ul>
+<li>Install Ubuntu 18.04</li>
+<li>Install Dependency Software</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">cd</span> /opt/
+mkdir golang
+<span style="color:#008000">cd</span> golang
+wget --no-check-certificate https://studygolang.com/dl/golang/go1.12.5.linux-amd64.tar.gz
+tar -zxvf go1.12.5.linux-amd64.tar.gz -C /usr/lib
+apt install git python3-pip wget software-properties-common apt-transport-https 
+pip3 install Pygments
+<span style="color:#008000">export</span> <span style="color:#19177c">VER</span><span style="color:#666">=</span><span style="color:#ba2121">&#34;0.55.6&#34;</span>
+wget https://github.com/gohugoio/hugo/releases/download/v<span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">VER</span><span style="color:#b68;font-weight:bold">}</span>/hugo_<span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">VER</span><span style="color:#b68;font-weight:bold">}</span>_Linux-64bit.deb
+dpkg -i hugo_<span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">VER</span><span style="color:#b68;font-weight:bold">}</span>_Linux-64bit.deb
+apt update
+apt list --upgradable
+apt upgrade
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+add-apt-repository <span style="color:#ba2121">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&#34;</span>
+apt update
+apt install code</code></pre></div>
+<ul>
+<li>Edit ~/.profile on latest line append</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:/usr/lib/go/bin</code></pre></div>
+<ul>
+<li>Create blog directory</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site devops_blog -f yaml
+<span style="color:#008000">cd</span> devops_blog
+git init
+git remote add origin git@github.com:&lt;your-github-account&gt;/devops_blog.git</code></pre></div>
+<ul>
+<li>Install new Theme</li>
+</ul>
+
+<p>| <a href="https://github.com/spf13/hugoThemes">Hugo Themes repository</a></p>
+
+<p>On the blog directory</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule add https://github.com/spf13/hyde themes/hyde
+git submodule add https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git themes/vanilla-bootstrap-hugo-theme
+cp themes/vanilla-bootstrap-hugo-theme/exampleSite/config.yaml .</code></pre></div>
+<ul>
+<li>Create New Blog Document , Hugo new document  default on the content dirctory</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/first-post.md
+hugo new _index.md</code></pre></div>
+<ul>
+<li>Edit _index.md</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">---
+title : Home
+date : ..........
+---</code></pre></div>
+<ul>
+<li>Test Hugo</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D server</code></pre></div>
+<ul>
+<li>Open the Browser</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">firefox <span style="color:#ba2121">&#34;http://localhost:1313/&#34;</span></code></pre></div>
+<p><img src="/hugo-demo.png" alt="hugo-demo" /></p>
+
+<ul>
+<li>Publish to Github</li>
+</ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add git@github.com:kingchang/kingchange.github.io.git public
+
+hugo </code></pre></div>
+<ul>
+<li>into public directory and publish to Github</li>
+</ul>
+
+
+
+      </main>
+    </div>
+    
+<footer id="footer" class="mt-auto text-center text-muted">
+  <div class="container">
+    Made with <a href="https://gohugo.io/">Hugo</a> &amp; <a href="https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme">Vanilla</a>
+  </div>
+</footer>
+
+    <script src="https://kingchang.github.io/js/feather.min.js"></script>
+<script>
+  feather.replace()
+</script>
+
+
+    
+  
+  <script>
+  window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+  ga('create', 'UA-123456789-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script async src='https://www.google-analytics.com/analytics.js'></script>
+  
+
+  </body>
+</html>
