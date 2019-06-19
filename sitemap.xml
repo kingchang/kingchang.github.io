@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kingchang.github.io/about/</loc>
+    <lastmod>2019-06-19T07:50:13+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kingchang.github.io/posts/hugo-install/</loc>
     <lastmod>2019-06-17T09:06:44+08:00</lastmod>
   </url>
