@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
   
   
-  <title>Tags | The Skynet devops blog</title>
+  <title>Mac Terminal Consle | The Skynet devops blog</title>
   <style>
 .container {
   max-width: 700px;
@@ -145,13 +145,11 @@ audio {
       
       
       
-       
-        
         
       
     
     
-    <a class="nav-link nav-link-active" href="/tags/"><i data-feather="tag"></i> Tags</a>
+    <a class="nav-link " href="/tags/"><i data-feather="tag"></i> Tags</a>
   
     
     
@@ -183,10 +181,19 @@ audio {
       <main id="main">
         
 
-<h1>Tags</h1>
+<h1>Mac Terminal Consle</h1>
+<p>Step 1: find usb serial on the /dev</p>
+<p>Step 2: use below command</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">screen <span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">usb</span> serial device on the /dev<span style="color:#b68;font-weight:bold">}</span> <span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">connected</span> device rate<span style="color:#b68;font-weight:bold">}</span> 
+</code></pre></div><p>※ connected device rate almost 9600 or 115200</p>
+<p>Connection to Device</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">screen /dev/tty.usbserial-FT2H04WO <span style="color:#666">9600</span>
+</code></pre></div><p>Disconnect to Device</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-fallback" data-lang="fallback">quit or exit on the device 
 
+Press [Ctrl] + A , [Ctrl] + \
 
-
+</code></pre></div>
 
 
       </main>

@@ -1,6 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://kingchang.github.io/posts/mac-terminal-consle/</loc>
+    <lastmod>2020-02-05T00:12:10+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://kingchang.github.io/posts/linux-pated/</loc>
+    <lastmod>2019-06-27T08:11:08+08:00</lastmod>
+  </url>
   
   <url>
     <loc>https://kingchang.github.io/about/</loc>
@@ -24,7 +34,6 @@
   
   <url>
     <loc>https://kingchang.github.io/tags/</loc>
-    <priority>0</priority>
   </url>
   
 </urlset>
