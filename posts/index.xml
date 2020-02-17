@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Blog on The Skynet devops blog</title>
@@ -19,10 +19,10 @@
       <guid>https://kingchang.github.io/posts/mac-terminal-consle/</guid>
       <description>Step 1: find usb serial on the /dev
 Step 2: use below command
-screen ${usb serial device on the /dev} ${connected device rate} ※ connected device rate almost 9600 or 115200
+screen ${usb serial device on the /dev} ${connected device rate}  ※ connected device rate almost 9600 or 115200
 Connection to Device
 screen /dev/tty.usbserial-FT2H04WO 9600 Disconnect to Device
-quit or exit on the device Press [Ctrl] + A , [Ctrl] + \ </description>
+quit or exit on the device Press [Ctrl] + A , [Ctrl] + \</description>
     </item>
     
     <item>
@@ -32,10 +32,10 @@ quit or exit on the device Press [Ctrl] + A , [Ctrl] + \ </description>
       
       <guid>https://kingchang.github.io/posts/linux-pated/</guid>
       <description>因 AWS EC2 在虛擬主機的硬體提供支援中有分 EBS 跟 instance store，使用 instance store 會比較便宜，缺點就是每次shutdown 後，存放在instance store 的資料會被清空，故每次重新啟動後都需要實作硬碟分割，相關的方式如下
-  登入 EC2 的 Linux 主機
+ 登入 EC2 的 Linux 主機
 使用 putty 或 mobaxterm 用 key 認證的方式連到 AWS 的 Server 中，如下圖
-  編輯 /etc/fstab
-  vim /etc/fstab 使用 parted 切 swap 跟 data 的分割區  # parted GNU Parted 3.2 Using /dev/nvme0n1 Welcome to GNU Parted! Type &amp;#39;help&amp;#39; to view a list of commands. (parted) mklabel New disk label type?</description>
+ 編輯 /etc/fstab
+  vim /etc/fstab  使用 parted 切 swap 跟 data 的分割區  # parted GNU Parted 3.2 Using /dev/nvme0n1 Welcome to GNU Parted! Type &amp;#39;help&amp;#39; to view a list of commands. (parted) mklabel New disk label type?</description>
     </item>
     
     <item>

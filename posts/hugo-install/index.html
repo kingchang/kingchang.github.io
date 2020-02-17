@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.64.0" />
+  <meta name="generator" content="Hugo 0.55.6" />
   <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
   
   
@@ -177,55 +177,57 @@ apt upgrade
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
 add-apt-repository <span style="color:#ba2121">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&#34;</span>
 apt update
-apt install code
-</code></pre></div><ul>
+apt install code</code></pre></div>
+<ul>
 <li>Edit ~/.profile on latest line append</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:/usr/lib/go/bin
-</code></pre></div><ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:/usr/lib/go/bin</code></pre></div>
+<ul>
 <li>Create blog directory</li>
 </ul>
 <div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site devops_blog -f yaml
 <span style="color:#008000">cd</span> devops_blog
 git init
-git remote add origin git@github.com:&lt;your-github-account&gt;/devops_blog.git
-</code></pre></div><ul>
+git remote add origin git@github.com:&lt;your-github-account&gt;/devops_blog.git</code></pre></div>
+<ul>
 <li>Install new Theme</li>
 </ul>
+
 <p>| <a href="https://github.com/spf13/hugoThemes">Hugo Themes repository</a></p>
+
 <p>On the blog directory</p>
 <div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule add https://github.com/spf13/hyde themes/hyde
 git submodule add https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git themes/vanilla-bootstrap-hugo-theme
-cp themes/vanilla-bootstrap-hugo-theme/exampleSite/config.yaml .
-
-</code></pre></div><ul>
+cp themes/vanilla-bootstrap-hugo-theme/exampleSite/config.yaml .</code></pre></div>
+<ul>
 <li>Create New Blog Document , Hugo new document  default on the content dirctory</li>
 </ul>
 <div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/first-post.md
-hugo new _index.md
-</code></pre></div><ul>
+hugo new _index.md</code></pre></div>
+<ul>
 <li>Edit _index.md</li>
 </ul>
 <div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">---
 title : Home
 date : ..........
----
-</code></pre></div><ul>
+---</code></pre></div>
+<ul>
 <li>Test Hugo</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D server
-</code></pre></div><ul>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D server</code></pre></div>
+<ul>
 <li>Open the Browser</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">firefox <span style="color:#ba2121">&#34;http://localhost:1313/&#34;</span>
-</code></pre></div><p><img src="/hugo-demo.png" alt="hugo-demo"></p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">firefox <span style="color:#ba2121">&#34;http://localhost:1313/&#34;</span></code></pre></div>
+<p><img src="/hugo-demo.png" alt="hugo-demo" /></p>
+
 <ul>
 <li>Publish to Github</li>
 </ul>
 <div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add git@github.com:kingchang/kingchange.github.io.git public
 
-hugo 
-</code></pre></div><ul>
+hugo </code></pre></div>
+<ul>
 <li>into public directory and publish to Github</li>
 </ul>
 
