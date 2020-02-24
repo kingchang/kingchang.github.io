@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.66.0-DEV" />
   <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
   
   
@@ -158,22 +158,23 @@ audio {
 
 <h1>Linux 使用 parted 製作硬碟分割</h1>
 <p>因 AWS EC2 在虛擬主機的硬體提供支援中有分 EBS 跟 instance store，使用 instance store 會比較便宜，缺點就是每次shutdown 後，存放在instance store 的資料會被清空，故每次重新啟動後都需要實作硬碟分割，相關的方式如下</p>
-
 <ol>
-<li><p>登入 EC2 的 Linux 主機</p>
-
-<p>使用 putty 或 mobaxterm 用 key 認證的方式連到 AWS 的 Server 中，如下圖</p></li>
-
-<li><p>編輯 /etc/fstab</p></li>
+<li>
+<p>登入 EC2 的 Linux 主機</p>
+<p>使用 putty 或 mobaxterm 用 key 認證的方式連到 AWS 的 Server 中，如下圖</p>
+</li>
+<li>
+<p>編輯 /etc/fstab</p>
+</li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    vim /etc/fstab</code></pre></div>
-<p><img src="/fstab_sample.png" alt="fstab content" /></p>
-
-<ol>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    vim /etc/fstab
+</code></pre></div><p><img src="/fstab_sample.png" alt="fstab content"></p>
+<ol start="3">
 <li>使用 parted 切 swap 跟 data 的分割區</li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    <span style="color:#408080;font-style:italic"># parted</span>
-GNU Parted <span style="color:#666">3</span>.2
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+    <span style="color:#408080;font-style:italic"># parted</span>
+GNU Parted 3.2
 Using /dev/nvme0n1
 Welcome to GNU Parted! Type <span style="color:#ba2121">&#39;help&#39;</span> to view a list of commands.
 <span style="color:#666">(</span>parted<span style="color:#666">)</span> mklabel
@@ -191,7 +192,7 @@ Sector size <span style="color:#666">(</span>logical/physical<span style="color:
 Partition Table: gpt
 Disk Flags:
 Number  Start   End    Size   File system  Name  Flags
-        <span style="color:#666">17</span>.4kB  200GB  200GB  Free Space
+        17.4kB  200GB  200GB  Free Space
 
 <span style="color:#666">(</span>parted<span style="color:#666">)</span> mkpart primary
 
@@ -212,12 +213,12 @@ Partition Table: gpt
 Disk Flags:
 
 Number  Start   End     Size    File system     Name     Flags
- <span style="color:#666">1</span>      1000MB  <span style="color:#666">30</span>.0GB  <span style="color:#666">29</span>.0GB  linux-swap<span style="color:#666">(</span>v1<span style="color:#666">)</span>  primary
- <span style="color:#666">2</span>      <span style="color:#666">30</span>.0GB  200GB   170GB   xfs             primary
+ <span style="color:#666">1</span>      1000MB  30.0GB  29.0GB  linux-swap<span style="color:#666">(</span>v1<span style="color:#666">)</span>  primary
+ <span style="color:#666">2</span>      30.0GB  200GB   170GB   xfs             primary
  
 <span style="color:#666">(</span>parted<span style="color:#666">)</span> quit
-Information: You may need to update /etc/fstab.</code></pre></div>
-<ol>
+Information: You may need to update /etc/fstab.
+</code></pre></div><ol start="4">
 <li>使用 lvm 建立相關的記錄</li>
 </ol>
 <div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   mkswap /dev/nvme0n1p1
@@ -242,7 +243,8 @@ mount -a
 <span style="color:#19177c">LABEL</span><span style="color:#666">=</span>cloudimg-rootfs	/	 ext4	defaults,discard	<span style="color:#666">0</span> <span style="color:#666">0</span>
 <span style="color:#408080;font-style:italic">#cdf3fcb0-11d9-42c1-b588-73a4ee2258f0</span>
 /dev/nvme0n1p1 none swap defaults,discard <span style="color:#666">0</span> <span style="color:#666">0</span>
-<span style="color:#19177c">UUID</span><span style="color:#666">=</span>a26ea291-0f31-4756-8ca3-f783438c2ef1 /opt xfs defaults,nofail <span style="color:#666">0</span> <span style="color:#666">2</span></code></pre></div>
+<span style="color:#19177c">UUID</span><span style="color:#666">=</span>a26ea291-0f31-4756-8ca3-f783438c2ef1 /opt xfs defaults,nofail <span style="color:#666">0</span> <span style="color:#666">2</span>
+</code></pre></div>
 
 
       </main>

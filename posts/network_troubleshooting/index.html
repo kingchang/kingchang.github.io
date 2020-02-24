@@ -4,7 +4,7 @@
   <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="generator" content="Hugo 0.55.6" />
+  <meta name="generator" content="Hugo 0.66.0-DEV" />
   <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
   
   
@@ -158,17 +158,26 @@ audio {
 
 <h1>Network_troubleshooting</h1>
 <ol>
-<li>open command line (Windows)
-<code>bash
-ping host
-tracert host
-telnet host ${opened port}
-ipconfig /all to lookup dns
-ping dns ip
-nslookup 
-type ip 
-</code></li>
+<li>開啟命令提示字元</li>
 </ol>
+<p>Ping</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-cmd" data-lang="cmd">   ping host
+   tracert host
+   telnet host ${opened port}
+   ipconfig /all to lookup dns
+   ping dns ip
+   nslookup 
+   <span style="color:#008000;font-weight:bold">type</span> ip 
+</code></pre></div><p>Traceroute</p>
+<p>ipconfig</p>
+<p>nslookup</p>
+<p>telnet</p>
+<ol start="2">
+<li>Linux 開啟端終機</li>
+</ol>
+<p>Ping</p>
+<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   ping 8.8.8.8
+</code></pre></div><p><img src="ping_command.png" alt="Ping Command"></p>
 
 
 
