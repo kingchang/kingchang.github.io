@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
   
   
-  <title>Hugo 安裝撞牆經驗 | The Skynet devops blog</title>
+  <title>Hugo 安裝撞牆經驗 | The devops blog</title>
   <style>
 .container {
   max-width: 700px;
@@ -161,32 +161,32 @@ audio {
 <li>Install Ubuntu 18.04</li>
 <li>Install Dependency Software</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">cd</span> /opt/
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">cd</span> /opt/
 mkdir golang
-<span style="color:#008000">cd</span> golang
+<span style="color:#8be9fd;font-style:italic">cd</span> golang
 wget --no-check-certificate https://studygolang.com/dl/golang/go1.12.5.linux-amd64.tar.gz
 tar -zxvf go1.12.5.linux-amd64.tar.gz -C /usr/lib
 apt install git python3-pip wget software-properties-common apt-transport-https 
 pip3 install Pygments
-<span style="color:#008000">export</span> <span style="color:#19177c">VER</span><span style="color:#666">=</span><span style="color:#ba2121">&#34;0.55.6&#34;</span>
-wget https://github.com/gohugoio/hugo/releases/download/v<span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">VER</span><span style="color:#b68;font-weight:bold">}</span>/hugo_<span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">VER</span><span style="color:#b68;font-weight:bold">}</span>_Linux-64bit.deb
-dpkg -i hugo_<span style="color:#b68;font-weight:bold">${</span><span style="color:#19177c">VER</span><span style="color:#b68;font-weight:bold">}</span>_Linux-64bit.deb
+<span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">VER</span><span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;0.55.6&#34;</span>
+wget https://github.com/gohugoio/hugo/releases/download/v<span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">VER</span><span style="color:#f1fa8c">}</span>/hugo_<span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">VER</span><span style="color:#f1fa8c">}</span>_Linux-64bit.deb
+dpkg -i hugo_<span style="color:#f1fa8c">${</span><span style="color:#8be9fd;font-style:italic">VER</span><span style="color:#f1fa8c">}</span>_Linux-64bit.deb
 apt update
 apt list --upgradable
 apt upgrade
 wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-add-apt-repository <span style="color:#ba2121">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&#34;</span>
+add-apt-repository <span style="color:#f1fa8c">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&#34;</span>
 apt update
 apt install code
 </code></pre></div><ul>
 <li>Edit ~/.profile on latest line append</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#008000">export</span> <span style="color:#19177c">PATH</span><span style="color:#666">=</span><span style="color:#19177c">$PATH</span>:/usr/lib/go/bin
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#8be9fd;font-style:italic">export</span> <span style="color:#8be9fd;font-style:italic">PATH</span><span style="color:#ff79c6">=</span><span style="color:#8be9fd;font-style:italic">$PATH</span>:/usr/lib/go/bin
 </code></pre></div><ul>
 <li>Create blog directory</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site devops_blog -f yaml
-<span style="color:#008000">cd</span> devops_blog
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new site devops_blog -f yaml
+<span style="color:#8be9fd;font-style:italic">cd</span> devops_blog
 git init
 git remote add origin git@github.com:&lt;your-github-account&gt;/devops_blog.git
 </code></pre></div><ul>
@@ -194,35 +194,35 @@ git remote add origin git@github.com:&lt;your-github-account&gt;/devops_blog.git
 </ul>
 <p>| <a href="https://github.com/spf13/hugoThemes">Hugo Themes repository</a></p>
 <p>On the blog directory</p>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule add https://github.com/spf13/hyde themes/hyde
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">git submodule add https://github.com/spf13/hyde themes/hyde
 git submodule add https://github.com/zwbetz-gh/vanilla-bootstrap-hugo-theme.git themes/vanilla-bootstrap-hugo-theme
 cp themes/vanilla-bootstrap-hugo-theme/exampleSite/config.yaml .
 
 </code></pre></div><ul>
 <li>Create New Blog Document , Hugo new document  default on the content dirctory</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/first-post.md
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo new posts/first-post.md
 hugo new _index.md
 </code></pre></div><ul>
 <li>Edit _index.md</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">---
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">---
 title : Home
 date : ..........
 ---
 </code></pre></div><ul>
 <li>Test Hugo</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D server
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">hugo -D server
 </code></pre></div><ul>
 <li>Open the Browser</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">firefox <span style="color:#ba2121">&#34;http://localhost:1313/&#34;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">firefox <span style="color:#f1fa8c">&#34;http://localhost:1313/&#34;</span>
 </code></pre></div><p><img src="/hugo-demo.png" alt="hugo-demo"></p>
 <ul>
 <li>Publish to Github</li>
 </ul>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add git@github.com:kingchang/kingchange.github.io.git public
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">git submodule add git@github.com:kingchang/kingchange.github.io.git public
 
 hugo 
 </code></pre></div><ul>

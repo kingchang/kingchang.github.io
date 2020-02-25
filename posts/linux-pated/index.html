@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
   
   
-  <title>Linux 使用 parted 製作硬碟分割 | The Skynet devops blog</title>
+  <title>Linux 使用 parted 製作硬碟分割 | The devops blog</title>
   <style>
 .container {
   max-width: 700px;
@@ -167,67 +167,67 @@ audio {
 <p>編輯 /etc/fstab</p>
 </li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    vim /etc/fstab
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">    vim /etc/fstab
 </code></pre></div><p><img src="/fstab_sample.png" alt="fstab content"></p>
 <ol start="3">
 <li>使用 parted 切 swap 跟 data 的分割區</li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
-    <span style="color:#408080;font-style:italic"># parted</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">
+    <span style="color:#6272a4"># parted</span>
 GNU Parted 3.2
 Using /dev/nvme0n1
-Welcome to GNU Parted! Type <span style="color:#ba2121">&#39;help&#39;</span> to view a list of commands.
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> mklabel
+Welcome to GNU Parted! Type <span style="color:#f1fa8c">&#39;help&#39;</span> to view a list of commands.
+<span style="color:#ff79c6">(</span>parted<span style="color:#ff79c6">)</span> mklabel
 New disk label type? gpt
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> p
-Model: Amazon EC2 NVMe Instance Storage <span style="color:#666">(</span>nvme<span style="color:#666">)</span>
+<span style="color:#ff79c6">(</span>parted<span style="color:#ff79c6">)</span> p
+Model: Amazon EC2 NVMe Instance Storage <span style="color:#ff79c6">(</span>nvme<span style="color:#ff79c6">)</span>
 Disk /dev/nvme0n1: 200GB
-Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: 512B/512B
+Sector size <span style="color:#ff79c6">(</span>logical/physical<span style="color:#ff79c6">)</span>: 512B/512B
 Partition Table: gpt
 
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> free
-Model: Amazon EC2 NVMe Instance Storage <span style="color:#666">(</span>nvme<span style="color:#666">)</span>
+<span style="color:#ff79c6">(</span>parted<span style="color:#ff79c6">)</span> free
+Model: Amazon EC2 NVMe Instance Storage <span style="color:#ff79c6">(</span>nvme<span style="color:#ff79c6">)</span>
 Disk /dev/nvme0n1: 200GB
-Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: 512B/512B
+Sector size <span style="color:#ff79c6">(</span>logical/physical<span style="color:#ff79c6">)</span>: 512B/512B
 Partition Table: gpt
 Disk Flags:
 Number  Start   End    Size   File system  Name  Flags
         17.4kB  200GB  200GB  Free Space
 
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> mkpart primary
+<span style="color:#ff79c6">(</span>parted<span style="color:#ff79c6">)</span> mkpart primary
 
-File system type?  <span style="color:#666">[</span>ext2<span style="color:#666">]</span>? linux-swap
+File system type?  <span style="color:#ff79c6">[</span>ext2<span style="color:#ff79c6">]</span>? linux-swap
 Start? 1GB
 End? 30GB
 
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> mkpart primary
+<span style="color:#ff79c6">(</span>parted<span style="color:#ff79c6">)</span> mkpart primary
 
-File system type?  <span style="color:#666">[</span>ext2<span style="color:#666">]</span>? xfs
+File system type?  <span style="color:#ff79c6">[</span>ext2<span style="color:#ff79c6">]</span>? xfs
 Start? 30GB
 End? 200GB
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> p
-Model: Amazon EC2 NVMe Instance Storage <span style="color:#666">(</span>nvme<span style="color:#666">)</span>
+<span style="color:#ff79c6">(</span>parted<span style="color:#ff79c6">)</span> p
+Model: Amazon EC2 NVMe Instance Storage <span style="color:#ff79c6">(</span>nvme<span style="color:#ff79c6">)</span>
 Disk /dev/nvme0n1: 200GB
-Sector size <span style="color:#666">(</span>logical/physical<span style="color:#666">)</span>: 512B/512B
+Sector size <span style="color:#ff79c6">(</span>logical/physical<span style="color:#ff79c6">)</span>: 512B/512B
 Partition Table: gpt
 Disk Flags:
 
 Number  Start   End     Size    File system     Name     Flags
- <span style="color:#666">1</span>      1000MB  30.0GB  29.0GB  linux-swap<span style="color:#666">(</span>v1<span style="color:#666">)</span>  primary
- <span style="color:#666">2</span>      30.0GB  200GB   170GB   xfs             primary
+ <span style="color:#bd93f9">1</span>      1000MB  30.0GB  29.0GB  linux-swap<span style="color:#ff79c6">(</span>v1<span style="color:#ff79c6">)</span>  primary
+ <span style="color:#bd93f9">2</span>      30.0GB  200GB   170GB   xfs             primary
  
-<span style="color:#666">(</span>parted<span style="color:#666">)</span> quit
+<span style="color:#ff79c6">(</span>parted<span style="color:#ff79c6">)</span> quit
 Information: You may need to update /etc/fstab.
 </code></pre></div><ol start="4">
 <li>使用 lvm 建立相關的記錄</li>
 </ol>
-<div class="highlight"><pre style=";-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   mkswap /dev/nvme0n1p1
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">   mkswap /dev/nvme0n1p1
    swapon -a /dev/nvme0n1p1
    vim /etc/fstab
 
-<span style="color:#19177c">LABEL</span><span style="color:#666">=</span>cloudimg-rootfs	/	 ext4	defaults,discard	<span style="color:#666">0</span> <span style="color:#666">0</span>
-<span style="color:#408080;font-style:italic">#cdf3fcb0-11d9-42c1-b588-73a4ee2258f0</span>
-/dev/nvme0n1p1 none swap defaults,discard <span style="color:#666">0</span> <span style="color:#666">0</span>
+<span style="color:#8be9fd;font-style:italic">LABEL</span><span style="color:#ff79c6">=</span>cloudimg-rootfs	/	 ext4	defaults,discard	<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">0</span>
+<span style="color:#6272a4">#cdf3fcb0-11d9-42c1-b588-73a4ee2258f0</span>
+/dev/nvme0n1p1 none swap defaults,discard <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">0</span>
 
 pvcreate /dev/nvme0n1p2
 vgcreate vg_wildfly /dev/nvme0n1p2
@@ -240,10 +240,10 @@ systemctl daemon-reload
 vim /etc/fstab
 mount -a
 
-<span style="color:#19177c">LABEL</span><span style="color:#666">=</span>cloudimg-rootfs	/	 ext4	defaults,discard	<span style="color:#666">0</span> <span style="color:#666">0</span>
-<span style="color:#408080;font-style:italic">#cdf3fcb0-11d9-42c1-b588-73a4ee2258f0</span>
-/dev/nvme0n1p1 none swap defaults,discard <span style="color:#666">0</span> <span style="color:#666">0</span>
-<span style="color:#19177c">UUID</span><span style="color:#666">=</span>a26ea291-0f31-4756-8ca3-f783438c2ef1 /opt xfs defaults,nofail <span style="color:#666">0</span> <span style="color:#666">2</span>
+<span style="color:#8be9fd;font-style:italic">LABEL</span><span style="color:#ff79c6">=</span>cloudimg-rootfs	/	 ext4	defaults,discard	<span style="color:#bd93f9">0</span> <span style="color:#bd93f9">0</span>
+<span style="color:#6272a4">#cdf3fcb0-11d9-42c1-b588-73a4ee2258f0</span>
+/dev/nvme0n1p1 none swap defaults,discard <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">0</span>
+<span style="color:#8be9fd;font-style:italic">UUID</span><span style="color:#ff79c6">=</span>a26ea291-0f31-4756-8ca3-f783438c2ef1 /opt xfs defaults,nofail <span style="color:#bd93f9">0</span> <span style="color:#bd93f9">2</span>
 </code></pre></div>
 
 
