@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="https://kingchang.github.io/css/bootstrap.min.css">
   
   
-  <title>Blog | The devops blog</title>
+  <title>Gitlab CD/CD | The devops blog</title>
   <style>
 .container {
   max-width: 700px;
@@ -143,13 +143,11 @@ audio {
       
       
       
-       
-        
         
       
     
     
-    <a class="nav-link nav-link-active" href="/posts/"><i data-feather="edit"></i> Blog</a>
+    <a class="nav-link " href="/posts/"><i data-feather="edit"></i> Blog</a>
   
   </nav>
 </div>
@@ -158,53 +156,13 @@ audio {
       <main id="main">
         
 
-<h1>Blog</h1>
-
-
-<p>
-  <a class="font-125" href="https://kingchang.github.io/posts/gitlab-cicd/">Gitlab CD/CD</a>
-  <br>
-  
-
-<i data-feather="calendar"></i> <time datetime="2020-02-26">Feb 26, 2020</time>
-
-</p>
-
-<p>
-  <a class="font-125" href="https://kingchang.github.io/posts/network_troubleshooting/">Network Troubleshooting</a>
-  <br>
-  
-
-<i data-feather="calendar"></i> <time datetime="2020-02-17">Feb 17, 2020</time>
-
-</p>
-
-<p>
-  <a class="font-125" href="https://kingchang.github.io/posts/mac-terminal-consle/">Mac Terminal Consle</a>
-  <br>
-  
-
-<i data-feather="calendar"></i> <time datetime="2020-02-05">Feb 5, 2020</time>
-
-</p>
-
-<p>
-  <a class="font-125" href="https://kingchang.github.io/posts/linux-pated/">Linux 使用 parted 製作硬碟分割</a>
-  <br>
-  
-
-<i data-feather="calendar"></i> <time datetime="2019-06-27">Jun 27, 2019</time>
-
-</p>
-
-<p>
-  <a class="font-125" href="https://kingchang.github.io/posts/hugo-install/">Hugo 安裝撞牆經驗</a>
-  <br>
-  
-
-<i data-feather="calendar"></i> <time datetime="2019-06-17">Jun 17, 2019</time>
-
-</p>
+<h1>Gitlab CD/CD</h1>
+<p>若使用 gitlab-cicd 時，需要下列3個步驟</p>
+<ol>
+<li>建立 .gitlab-ci.yml 檔案</li>
+<li>Click Setting -&gt; [CI/CD Pinelines]</li>
+<li>在 執行 gitlab-ruuner  register 時將 url 跟 token 註冊進去，執行完成後，修改 config 檔案，加入 clone_url = &ldquo;http://gitlab 內網ip&rdquo;</li>
+</ol>
 
 
 

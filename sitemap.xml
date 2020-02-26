@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://kingchang.github.io/posts/gitlab-cicd/</loc>
+    <lastmod>2020-02-26T21:04:06+08:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://kingchang.github.io/posts/network_troubleshooting/</loc>
     <lastmod>2020-02-17T08:26:06+08:00</lastmod>
   </url>

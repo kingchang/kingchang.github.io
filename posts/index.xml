@@ -12,6 +12,16 @@
     
     
     <item>
+      <title>Gitlab CD/CD</title>
+      <link>https://kingchang.github.io/posts/gitlab-cicd/</link>
+      <pubDate>Wed, 26 Feb 2020 21:04:06 +0800</pubDate>
+      
+      <guid>https://kingchang.github.io/posts/gitlab-cicd/</guid>
+      <description>若使用 gitlab-cicd 時，需要下列3個步驟
+ 建立 .gitlab-ci.yml 檔案 Click Setting -&amp;gt; [CI/CD Pinelines] 在 執行 gitlab-ruuner register 時將 url 跟 token 註冊進去，執行完成後，修改 config 檔案，加入 clone_url = &amp;ldquo;http://gitlab 內網ip&amp;rdquo;  </description>
+    </item>
+    
+    <item>
       <title>Network Troubleshooting</title>
       <link>https://kingchang.github.io/posts/network_troubleshooting/</link>
       <pubDate>Mon, 17 Feb 2020 08:26:06 +0800</pubDate>
