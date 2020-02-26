@@ -160,9 +160,22 @@ audio {
 <p>若使用 gitlab-cicd 時，需要下列3個步驟</p>
 <ol>
 <li>建立 .gitlab-ci.yml 檔案</li>
+</ol>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#ff79c6">stages</span>:
+  - package
+
+<span style="color:#ff79c6">package-job</span>:
+  - <span style="color:#ff79c6">stage</span>: package
+  - <span style="color:#ff79c6">tags</span>:
+      - aaa
+      - bbb
+  - <span style="color:#ff79c6">script</span>: ./gradlew build
+
+</code></pre></div><ol start="2">
 <li>Click Setting -&gt; [CI/CD Pinelines]</li>
 <li>在 執行 gitlab-ruuner  register 時將 url 跟 token 註冊進去，執行完成後，修改 config 檔案，加入 clone_url = &ldquo;http://gitlab 內網ip&rdquo;</li>
 </ol>
+<p>若有 .gitlab-ci.yml 有使用 tag 時，需將所有 tag 加入才能正常運作</p>
 
 
 

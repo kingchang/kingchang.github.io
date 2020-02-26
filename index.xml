@@ -18,7 +18,7 @@
       
       <guid>https://kingchang.github.io/posts/gitlab-cicd/</guid>
       <description>若使用 gitlab-cicd 時，需要下列3個步驟
- 建立 .gitlab-ci.yml 檔案 Click Setting -&amp;gt; [CI/CD Pinelines] 在 執行 gitlab-ruuner register 時將 url 跟 token 註冊進去，執行完成後，修改 config 檔案，加入 clone_url = &amp;ldquo;http://gitlab 內網ip&amp;rdquo;  </description>
+ 建立 .gitlab-ci.yml 檔案  stages: - package package-job: - stage: package - tags: - aaa - bbb - script: ./gradlew build Click Setting -&amp;gt; [CI/CD Pinelines] 在 執行 gitlab-ruuner register 時將 url 跟 token 註冊進去，執行完成後，修改 config 檔案，加入 clone_url = &amp;ldquo;http://gitlab 內網ip&amp;rdquo;  若有 .gitlab-ci.yml 有使用 tag 時，需將所有 tag 加入才能正常運作</description>
     </item>
     
     <item>
